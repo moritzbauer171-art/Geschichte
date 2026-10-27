@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Unterrichtsreihe Geschichte, Klasse 10 (ISS): Sieben Fotos, fünf Jahre – Der Weg in die Diktatur 1933–1938. Mit Arbeitsblättern zu allen sieben Stunden.">
+<meta name="description" content="Unterrichtsreihe Geschichte, Klasse 10 (ISS): Sieben Fotos, fünf Jahre – Der Weg in die Diktatur 1933–1938. Mit Arbeitsblättern zu allen sieben Stunden und einem Creator für eigene Blätter.">
 <title>Sieben Fotos, fünf Jahre</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -257,6 +257,31 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
 .lightbox p{font:400 .9rem/1.4 var(--f-type);color:#E8E2D6;max-width:80ch;text-align:center}
 .lightbox .btn{color:#E8E2D6;border-color:#A49D90}
 
+/* ---------- Seite Arbeitsblätter ---------- */
+.ab-tpls{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:12px}
+.ab-tpl{appearance:none;text-align:left;cursor:pointer;background:var(--sheet);color:var(--ink);border:1px solid var(--rule);border-radius:2px;padding:16px 16px 14px;display:flex;flex-direction:column;gap:6px;font:inherit;min-height:9.5rem;position:relative}
+.ab-tpl::after{content:"";position:absolute;top:10px;right:10px;width:18px;height:22px;border:1px solid var(--ink-2);border-radius:1px;background:repeating-linear-gradient(to bottom,transparent 0 5px,var(--rule) 5px 6px);opacity:.7}
+.ab-tpl:hover{border-color:var(--stamp);background:var(--stamp-tint)}
+.ab-tpl b{font:500 1.06rem/1.2 var(--f-display);padding-right:28px}
+.ab-tpl span{font-size:.93rem;line-height:1.45;color:var(--ink-2)}
+.ab-tpl i{margin-top:auto;font:700 .74rem/1 var(--f-type);letter-spacing:.06em;text-transform:uppercase;color:var(--stamp);font-style:normal}
+.ab-fromrow{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:6px}
+.ab-fromrow label{font:500 .95rem/1.3 var(--f-display);color:var(--ink-2)}
+.ab-fromctl{display:flex;flex-wrap:wrap;gap:8px;min-width:0}
+.ab-fromctl select{font:500 .9rem/1.2 var(--f-display);color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:2px;padding:8px 10px;min-height:36px;max-width:100%}
+.ab-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.ab-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule)}
+.ab-main{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ab-main b{font:500 1.06rem/1.25 var(--f-display);overflow-wrap:anywhere}
+.ab-main span{font-size:.93rem;color:var(--ink-2)}
+.ab-main .ab-meta{font:400 .78rem/1.4 var(--f-type)}
+.ab-act{display:flex;flex-wrap:wrap;gap:6px}
+.ab-empty{padding:14px 0;color:var(--ink-2);border-bottom:1px solid var(--rule)}
+@media (max-width:640px){.ab-item{grid-template-columns:1fr}}
+.ws-adds{display:flex;flex-wrap:wrap;gap:8px}
+.ws-adds .ws-add{margin-top:8px}
+.ws .s-satz li .ws-ctl{grid-column:1 / -1;margin-top:2px}
+
 /* ---------- Arbeitsblatt-Werkstatt ---------- */
 .ws-open{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .ws{position:fixed;inset:0;z-index:40;background:var(--board);display:grid;grid-template-rows:auto minmax(0,1fr)}
@@ -372,6 +397,8 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
 .s-tab th{font:600 6.9pt/1.3 "Jost",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--p-ink-2);background:var(--p-box)}
 .s-tab tr{break-inside:avoid;page-break-inside:avoid}
 .s-tab tr:last-child td{border-bottom:.6pt solid var(--p-ink-2)}
+.s-free td.s-blank{height:9mm}
+.s-tabk .s-free{margin-top:.4mm}
 .s-merk .s-mt{font-weight:600;width:22%}
 .s-merk td:nth-child(2){width:32%}
 .s-merk td.s-blank{height:10mm}
@@ -454,7 +481,7 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
         <div><dt>Arbeitsweise</dt><dd>Keine Lehrervorträge. Die Lernenden erarbeiten den Kontext selbst aus Sachtexten von bpb, LeMO (Deutsches Historisches Museum), Bundesarchiv, Gedenk- und Bildungseinrichtungen und aus Fachliteratur. Die Texte werden gekürzt und, wo nötig, sprachlich entlastet; die Fundstelle bleibt stehen. Die Lehrkraft stellt Material bereit, gibt Impulse, moderiert und sichert.</dd></div>
         <div><dt>Differenzierung</dt><dd>Satzbausteine auf den Niveaus F und G, Expertenaufgaben auf Niveau H. Die Perspektiven sind zuerst vorgegeben und werden in Stunde 6 und 7 schrittweise geöffnet.</dd></div>
         <div><dt>Fotofries</dt><dd>Nach jeder Stunde kommt das Foto an eine Zeitleiste 1933–1938 im Klassenraum, wie sie der RLP als „Geschichtsfries“ empfiehlt. Darunter hängen Vorausurteile, Sach- und Werturteile der Stunde. In Stunde 7 wird der Fries zur Grundlage des Reihenurteils.</dd></div>
-        <div><dt>Arbeitsblätter</dt><dd>Zu jeder Stunde gibt es ein Arbeitsblatt mit operationalisierten Aufgaben, Urteilsraster, Satzbausteinen und Wortspeicher. „Arbeitsblatt bearbeiten“ auf der Stundenseite öffnet es: Texte direkt ändern, Operatoren tauschen, Bausteine ein- und ausblenden und das Blatt dann als Datei zum Drucken herunterladen.</dd></div>
+        <div><dt>Arbeitsblätter</dt><dd>Zu jeder Stunde gibt es ein Arbeitsblatt mit operationalisierten Aufgaben, Urteilsraster, Satzbausteinen und Wortspeicher. „Arbeitsblatt bearbeiten“ auf der Stundenseite öffnet es: Texte direkt ändern, Operatoren tauschen, Bausteine ein- und ausblenden und das Blatt dann drucken. Eigene Blätter von Grund auf entstehen auf der Seite „Arbeitsblätter“ am Ende der Reihe.</dd></div>
         <div><dt>Fotos einsetzen</dt><dd>Jede Stundenseite hat einen Albumrahmen mit Signatur und Fundstelle. Über „Foto einsetzen“ wird das Bild gespeichert und ist danach auf allen Geräten zu sehen, sofern die Anwendung in claude.ai geöffnet ist und du sie bearbeiten darfst. Sonst lässt sich ein Foto für die laufende Sitzung laden.</dd></div>
       </dl>
     </div>
@@ -1442,6 +1469,30 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   </div>
 </section>
 
+<!-- ===================== ARBEITSBLÄTTER ===================== -->
+<section class="page" id="p-blaetter" data-id="blaetter" data-label="Arbeitsblätter" aria-label="Arbeitsblätter von Grund auf">
+  <div class="inner">
+    <div class="measure stack">
+      <p class="eyebrow">Werkstatt</p>
+      <h2>Arbeitsblätter von Grund auf</h2>
+      <p class="lead">Hier entstehen Arbeitsblätter, die nicht an eine Stunde der Reihe gebunden sind: für Vertretung, Wiederholung, Differenzierung oder eine andere Reihe. Gestaltung, Operatoren mit Anforderungsbereichen und Druck funktionieren wie bei den Stundenblättern; dazu kommen eigene Bilder und Tabellen zum Ausfüllen.</p>
+    </div>
+    <div class="section">
+      <h3>Neues Blatt</h3>
+      <div class="ab-tpls" id="ab-tpls"></div>
+      <div class="ab-fromrow">
+        <label for="ab-src">Oder ein Stundenblatt als Ausgangspunkt nehmen</label>
+        <div class="ab-fromctl"><select id="ab-src"></select><button class="btn pri" id="ab-from" type="button" aria-haspopup="dialog">Übernehmen</button></div>
+      </div>
+    </div>
+    <div class="section">
+      <h3>Meine Arbeitsblätter</h3>
+      <p class="status" id="ab-status" role="status"></p>
+      <ul class="ab-list" id="ab-list"></ul>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== QUELLEN ===================== -->
 <section class="page" id="p-quellen" data-id="quellen" data-label="Quellen" aria-label="Bildnachweise und Literatur">
   <div class="inner">
@@ -1524,6 +1575,7 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
     </div>
     <div class="f-group f-post">
       <button class="f-btn" type="button" data-go="abschluss" title="Abschlussaufgabe"><span class="t">Abschluss</span></button>
+      <button class="f-btn" type="button" data-go="blaetter" title="Arbeitsblätter"><span class="t">Blätter</span></button>
       <button class="f-btn" type="button" data-go="quellen" title="Quellen"><span class="t">Quellen</span></button>
     </div>
     <button class="arrow" id="next" type="button" aria-label="Nächste Seite">›</button>
@@ -1552,6 +1604,8 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
       <div class="ws-opts" id="ws-opts" role="group" aria-label="Bausteine des Arbeitsblatts">
         <label><input type="checkbox" data-o="linien"> Schreiblinien</label>
         <label><input type="checkbox" data-o="namen"> Name, Klasse, Datum</label>
+        <label><input type="checkbox" data-o="stamp"> Stempel</label>
+        <label><input type="checkbox" data-o="frage"> Leitfrage</label>
         <label><input type="checkbox" data-o="foto"> Foto</label>
         <label><input type="checkbox" data-o="legende"> Bildlegende</label>
         <label><input type="checkbox" data-o="kasten"> Textkästen</label>
@@ -1900,6 +1954,15 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
               blattReadyResolve();
             }, function(){ blattReadyResolve(); });
           } catch (e) { blattReadyResolve(); }
+          try {
+            db.collection("eigene").onSnapshot(function(snap){
+              var m = {};
+              snap.docs.forEach(function(d){
+                if (d.exists && /^b-[a-z0-9-]{4,40}$/.test(d.id)){ var x = d.data(); if (x && typeof x === "object") m[d.id] = x; }
+              });
+              sharedOwn = m; renderOwnList();
+            }, function(){ if (abStatus) abStatus.textContent = "Gemeinsam gespeicherte Blätter lassen sich gerade nicht laden."; });
+          } catch (e) {}
         }
         done();
       });
@@ -1933,7 +1996,7 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   var SFS = [["", "ohne Angabe"], ["EA", "Einzelarbeit"], ["PA", "Partnerarbeit"], ["GA", "Gruppenarbeit"], ["Plenum", "Plenum"], ["HA", "Hausaufgabe"]];
   var LVS = [["", "für alle"], ["F", "Niveau F"], ["G", "Niveau G"], ["H", "Niveau H"], ["Z", "Zusatz"]];
   var MERK = [["Kategorie", "Worum geht es?", "Es geht um …"], ["Kriterien", "Welche Fragen prüfe ich?", "Ich prüfe: … ?"], ["Perspektive", "Aus wessen Sicht, zu welcher Zeit?", "Aus der Sicht von … im Jahr …"], ["Urteil", "Was ist mein Ergebnis – und warum?", "Deshalb …, weil …"]];
-  var BASE_OPTS = { linien: true, namen: true, foto: true, legende: false, kasten: true, afb: true, sf: true, niv: true, merk: false, satz: true, wort: true, ops: true, mat: true, raster: "klein" };
+  var BASE_OPTS = { linien: true, namen: true, stamp: true, frage: true, foto: true, legende: false, kasten: true, afb: true, sf: true, niv: true, merk: false, satz: true, wort: true, ops: true, mat: true, raster: "klein" };
   var WU = "Wähle einen Satzbaustein F, G oder H.";
 
   function T(op, sf, m, h, lines, tip, lv){ return { op: op, sf: sf, m: m || "", h: h, lines: lines, tip: (tip == null ? null : tip), lv: lv || "" }; }
@@ -2117,43 +2180,121 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   function okList(list, v){ for (var i = 0; i < list.length; i++){ if (list[i][0] === v) return true; } return false; }
 
   /* ---------- Zustand ---------- */
+  var YEAR = String(new Date().getFullYear());
+  var SATZ_LV = [["S", "Sachurteil"], ["F", "Werturteil F"], ["G", "Werturteil G"], ["H", "Werturteil H"], ["A", "Satzanfang"]];
+  function merkState(leer, c3h){ return { c3h: c3h || "So kann ich es sagen", leer: !!leer, rows: MERK.map(function(r){ return { t: r[0], q: r[1], c: leer ? "" : r[2] }; }) }; }
   function defState(n){
     var b = BLATT[n], page = document.getElementById("p-stunde-" + n);
     var txt = function(sel){ var e = page && page.querySelector(sel); return e ? esc(e.textContent.replace(/\s+/g, " ").trim()) : ""; };
-    var leer = !!(b.merk && b.merk.leer);
     return clone({
       v: 1,
       kopf: "Geschichte · Klasse 10",
       reihe: "Sieben Fotos, fünf Jahre · Der Weg in die Diktatur 1933–1938",
       eyebrow: txt(".col-text .eyebrow"), titel: txt(".col-text h2"), frage: txt(".col-text .frage"),
       legende: txt(".legend .txt"), fototag: b.fototag || "M 1",
+      stamp: { a: "Stunde", b: String(n), c: dates[n - 1].slice(0, 4) },
       opts: Object.assign({}, BASE_OPTS, b.opts || {}),
       kaesten: b.kaesten || [], aufgaben: b.aufgaben, raster: b.raster, satz: b.satz,
-      merk: { c3h: (b.merk && b.merk.c3h) || "So kann ich es sagen", leer: leer, rows: MERK.map(function(r){ return { t: r[0], q: r[1], c: leer ? "" : r[2] }; }) },
-      wort: b.wort, mat: b.mat
+      merk: merkState(b.merk && b.merk.leer, b.merk && b.merk.c3h),
+      wort: b.wort, mat: b.mat, bild: { asset: "", data: "" }, meta: {}, quelle: ""
     });
   }
+  /* Grundgerüst für eigene Blätter */
+  function blankState(){
+    return {
+      v: 1, kopf: "Geschichte · Klasse 10", reihe: "", eyebrow: "", titel: "", frage: "", legende: "", fototag: "M 1",
+      stamp: { a: "Blatt", b: "1", c: YEAR },
+      opts: Object.assign({}, BASE_OPTS, { foto: false, legende: false, merk: false, satz: false, wort: false, raster: "aus", mat: false }),
+      kaesten: [], aufgaben: [T("beschreiben", "EA", "", "", 3)],
+      raster: { frage: "", kat: "", ebene: "", persp: "", cols: ["Perspektive 1", "Perspektive 2"], krit: ["", "", ""] },
+      satz: [], merk: merkState(false), wort: "", mat: "", bild: { asset: "", data: "" }, meta: {}, quelle: ""
+    };
+  }
+  var VORLAGEN = [
+    { id: "leer", name: "Leeres Blatt", d: "Kopf, Titel und eine erste Aufgabe. Alles Weitere fügst du selbst hinzu.",
+      make: function(){ return blankState(); } },
+    { id: "bild", name: "Bildanalyse", d: "Drei Schritte nach Hamann: Abbild, Bild, Schlüsselbild – mit Foto, Bildlegende und Wortspeicher.",
+      make: function(){
+        var s = blankState();
+        Object.assign(s.opts, { foto: true, legende: true, wort: true, mat: true });
+        s.kaesten = [{ typ: "text", pos: "oben", t: "So gehst du vor", h: "<b>Abbild:</b> Was ist zu sehen? <b>Bild:</b> Wie ist das Foto gemacht, und wie wirkt es? <b>Schlüsselbild:</b> Wofür steht das Foto heute?", cols: [], rows: 0 }];
+        s.aufgaben = [
+          T("beschreiben", "EA", "M 1", "<b>Beschreibe</b> das Foto: Wer oder was ist zu sehen? Wo und wann könnte es aufgenommen worden sein?", 3, "Schreibe zuerst nur, was du siehst. Vermutungen kennzeichnest du mit „vielleicht“."),
+          T("untersuchen", "PA", "M 1", "<b>Untersucht</b> die Gestaltung des Fotos: Standpunkt der Kamera, Ausschnitt, Licht und Größenverhältnisse. Welche Wirkung entsteht?", 3),
+          T("erläutern", "PA", "M 2", "<b>Erläutert</b> mithilfe von M 2, wann, von wem und wozu das Foto gemacht und veröffentlicht wurde.", 3),
+          T("beurteilen", "EA", "", "<b>Beurteile</b>, wofür das Foto ein glaubwürdiger Beleg ist – und wofür nicht.", 4)
+        ];
+        s.wort = "Abbild · Bild · Schlüsselbild · Bildlegende · Ausschnitt · Kamerastandpunkt · Inszenierung · Propaganda · Beleg";
+        s.mat = "M 1 Foto: … · M 2 …";
+        return s;
+      } },
+    { id: "text", name: "Textarbeit", d: "Sachtext oder Quelle erschließen: zusammenfassen, herausarbeiten, einordnen, beurteilen.",
+      make: function(){
+        var s = blankState();
+        Object.assign(s.opts, { wort: true, mat: true });
+        s.kaesten = [{ typ: "text", pos: "oben", t: "M 1 · Titel des Textes", h: "", cols: [], rows: 0 }];
+        s.aufgaben = [
+          T("zusammenfassen", "EA", "M 1", "<b>Fasse</b> M 1 in drei bis vier Sätzen <b>zusammen</b>.", 4),
+          T("herausarbeiten", "PA", "M 1", "<b>Arbeitet</b> aus M 1 <b>heraus</b>, …", 3),
+          T("einordnen", "PA", "M 1", "<b>Ordnet</b> M 1 in den historischen Zusammenhang <b>ein</b>: Wann und unter welchen Umständen entstand der Text?", 3),
+          T("beurteilen", "EA", "", "<b>Beurteile</b>, …", 4)
+        ];
+        s.mat = "M 1 Autorin oder Autor: Titel, Quelle, Jahr";
+        return s;
+      } },
+    { id: "urteil", name: "Urteilsbildung", d: "Sach- und Werturteil nach Kayser/Hagemann – mit Urteilsraster, Merkkarte und Satzbausteinen F/G/H.",
+      make: function(){
+        var s = blankState();
+        Object.assign(s.opts, { raster: "klein", merk: true, satz: true, mat: true });
+        s.aufgaben = [
+          T("herausarbeiten", "PA", "M 1", "<b>Arbeitet</b> aus M 1 <b>heraus</b>, …", 3),
+          T("beurteilen", "PA", "Urteilsraster", "<b>Beurteilt</b> aus der Sicht von …, ob …", 4, "Füllt zuerst das Urteilsraster aus."),
+          T("Stellung nehmen", "EA", "", "<b>Nimm Stellung</b>: …", 5, WU)
+        ];
+        s.satz = SZ("Aus der Sicht … war …, weil … und weil …", "Gemessen an … halte ich … für …, weil …",
+          "Damals galt …, heute gilt … Gleich geblieben ist …, geändert hat sich …", "Für mich heißt das heute: …");
+        return s;
+      } }
+  ];
+
   function normalize(src, base){
     var o = clone(base);
     if (!isObj(src)) return o;
+    var cs = function(v, d){ return typeof v === "string" ? cleanHTML(v) : d; };
     ["kopf", "reihe", "eyebrow", "titel", "frage", "legende", "fototag", "wort", "mat"].forEach(function(k){ if (typeof src[k] === "string") o[k] = cleanHTML(src[k]); });
     if (isObj(src.opts)) Object.keys(BASE_OPTS).forEach(function(k){
       if (k === "raster"){ if (["aus", "klein", "gross"].indexOf(src.opts.raster) >= 0) o.opts.raster = src.opts.raster; }
       else if (typeof src.opts[k] === "boolean") o.opts[k] = src.opts[k];
     });
-    if (Array.isArray(src.kaesten)) o.kaesten = src.kaesten.filter(isObj).slice(0, 8).map(function(k){ return { pos: k.pos === "oben" ? "oben" : "unten", t: cleanHTML(String(k.t || "")), h: cleanHTML(String(k.h || "")) }; });
+    if (isObj(src.stamp)) o.stamp = { a: cs(src.stamp.a, o.stamp.a), b: cs(src.stamp.b, o.stamp.b), c: cs(src.stamp.c, o.stamp.c) };
+    if (isObj(src.bild)){
+      var as = src.bild.asset, da = src.bild.data;
+      o.bild = { asset: (typeof as === "string" && /^[A-Za-z0-9_-]{8,64}$/.test(as)) ? as : "",
+        data: (typeof da === "string" && da.length < 4000000 && /^data:image\/(jpeg|png|webp|gif);base64,[A-Za-z0-9+\/=]+$/.test(da)) ? da : "" };
+    }
+    if (isObj(src.meta)) o.meta = {
+      erstellt: /^\d{4}-\d\d-\d\dT[\d:.]+Z$/.test(src.meta.erstellt || "") ? src.meta.erstellt : undefined,
+      geaendert: /^\d{4}-\d\d-\d\dT[\d:.]+Z$/.test(src.meta.geaendert || "") ? src.meta.geaendert : undefined
+    };
+    if (typeof src.quelle === "string") o.quelle = src.quelle.replace(/[<>]/g, "").slice(0, 80);
+    if (Array.isArray(src.kaesten)) o.kaesten = src.kaesten.filter(isObj).slice(0, 10).map(function(k){
+      var tab = k.typ === "tabelle";
+      return { typ: tab ? "tabelle" : "text", pos: k.pos === "oben" ? "oben" : "unten", t: cleanHTML(String(k.t || "")), h: tab ? "" : cleanHTML(String(k.h || "")),
+        cols: tab && Array.isArray(k.cols) && k.cols.length ? k.cols.slice(0, 6).map(function(x){ return cleanHTML(String(x || "")); }) : (tab ? ["", ""] : []),
+        rows: tab ? int(k.rows, 1, 14, 4) : 0 };
+    });
     if (Array.isArray(src.aufgaben)) o.aufgaben = src.aufgaben.filter(isObj).slice(0, 20).map(function(a){
       return { op: OPS[a.op] ? a.op : "beschreiben", sf: okList(SFS, a.sf) ? a.sf : "", lv: okList(LVS, a.lv) ? a.lv : "",
         m: String(a.m || "").replace(/[<>]/g, "").slice(0, 80), h: cleanHTML(String(a.h || "")),
         tip: a.tip == null ? null : cleanHTML(String(a.tip)), lines: int(a.lines, 0, 14, 3) };
     });
     if (isObj(src.raster)){
-      var r = src.raster, cs = function(v, d){ return typeof v === "string" ? cleanHTML(v) : d; };
+      var r = src.raster;
       var ls = function(v, lo, hi, d){ return Array.isArray(v) && v.length >= lo ? v.slice(0, hi).map(function(x){ return cleanHTML(String(x || "")); }) : d; };
       o.raster = { frage: cs(r.frage, o.raster.frage), kat: cs(r.kat, o.raster.kat), ebene: cs(r.ebene, o.raster.ebene), persp: cs(r.persp, o.raster.persp),
         cols: ls(r.cols, 1, 4, o.raster.cols), krit: ls(r.krit, 1, 8, o.raster.krit) };
     }
-    if (Array.isArray(src.satz)) o.satz = src.satz.filter(isObj).slice(0, 8).map(function(s){ return { lv: /^[SFGH]$/.test(s.lv) ? s.lv : "S", h: cleanHTML(String(s.h || "")) }; });
+    if (Array.isArray(src.satz)) o.satz = src.satz.filter(isObj).slice(0, 10).map(function(s){ return { lv: okList(SATZ_LV, s.lv) ? s.lv : "A", h: cleanHTML(String(s.h || "")) }; });
     if (isObj(src.merk)){
       if (typeof src.merk.c3h === "string") o.merk.c3h = cleanHTML(src.merk.c3h);
       o.merk.leer = !!src.merk.leer;
@@ -2164,6 +2305,8 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
     }
     return o;
   }
+
+  /* Stundenblätter: gemeinsamer Speicher (blaetter/stunde-N) oder Browser */
   function lsKey(n){ return "sieben-fotos:blatt:" + n; }
   function readLocal(n){ try { var s = localStorage.getItem(lsKey(n)); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
   function writeLocal(n, d){ try { localStorage.setItem(lsKey(n), JSON.stringify(d)); return true; } catch (e) { return false; } }
@@ -2174,8 +2317,27 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
     else { src = mine || shared; WS.src = mine ? "lokal" : (shared ? "lehrkraft" : "vorlage"); }
     return normalize(src, defState(n));
   }
+
+  /* Eigene Blätter: gemeinsamer Speicher (eigene/<id>) oder Browser */
+  var sharedOwn = {};
+  var localOwn = readOwnLocal();
+  function readOwnLocal(){ try { var s = localStorage.getItem("sieben-fotos:eigene"); var o = s ? JSON.parse(s) : {}; return isObj(o) ? o : {}; } catch (e) { return {}; } }
+  function writeOwnLocal(){ try { localStorage.setItem("sieben-fotos:eigene", JSON.stringify(localOwn)); return true; } catch (e) { return false; } }
+  function newId(){ return "b-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 7); }
+  function ownData(id){ return canWriteBlatt === true ? (sharedOwn[id] || localOwn[id]) : (localOwn[id] || sharedOwn[id]); }
+  function loadOwn(id){
+    var mine = localOwn[id], shared = sharedOwn[id];
+    if (canWriteBlatt === true) WS.src = shared ? "gemeinsam" : "lokal";
+    else WS.src = mine ? "lokal" : "lehrkraft";
+    return normalize(ownData(id), blankState());
+  }
   function sourceText(){
     var dbWrite = db && canWriteBlatt !== false;
+    if (WS.kind === "eigen"){
+      if (WS.src === "gemeinsam") return "Gespeichert. Änderungen speichern sich selbst; alle mit Zugriff sehen sie.";
+      if (WS.src === "lehrkraft") return "Blatt der Lehrkraft. Deine Änderungen bleiben nur in diesem Browser.";
+      return dbWrite ? "Neues Blatt. Änderungen speichern sich selbst; alle mit Zugriff sehen sie." : "Änderungen bleiben in diesem Browser gespeichert.";
+    }
     switch (WS.src){
       case "gemeinsam": return "Gespeicherte Fassung. Änderungen speichern sich selbst; alle mit Zugriff sehen sie.";
       case "lehrkraft": return "Fassung der Lehrkraft. Deine Änderungen bleiben nur in diesem Browser.";
@@ -2186,6 +2348,15 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
 
   /* ---------- Darstellung ---------- */
   function photoSrc(n){ var slot = "stunde-" + n; return local[slot] || (stored[slot] ? "/_blob/" + stored[slot] : ""); }
+  function bildSrc(st){ return st.bild && st.bild.asset ? "/_blob/" + st.bild.asset : ((st.bild && st.bild.data) || ""); }
+  function ctxFor(kind, key, st){
+    if (kind === "stunde"){
+      var al = document.querySelector('.album[data-slot="stunde-' + key + '"]');
+      var sigEl = al ? al.querySelectorAll(".empty p")[2] : null;
+      return { eigen: false, foto: st.opts.foto ? photoSrc(key) : "", alt: al ? al.querySelector(".photo").getAttribute("alt") || "" : "", sig: sigEl ? sigEl.textContent : "" };
+    }
+    return { eigen: true, foto: st.opts.foto ? bildSrc(st) : "", alt: plain(st.legende) || "Bild zum Arbeitsblatt", sig: "" };
+  }
   function opOptions(cur){
     return ["I", "II", "III"].map(function(af){
       return '<optgroup label="AFB ' + af + '">' + OP_KEYS.filter(function(k){ return OPS[k].afb === af; }).map(function(k){
@@ -2197,8 +2368,8 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   function lvLabel(lv){ return lv === "Z" ? "Zusatz" : "Niveau " + lv; }
   function sfLabel(sf){ for (var i = 0; i < SFS.length; i++){ if (SFS[i][0] === sf) return SFS[i][1]; } return sf; }
 
-  function renderSheet(st, n, edit, foto){
-    var o = st.opts, h = "";
+  function renderSheet(st, ctx, edit){
+    var o = st.opts, h = "", foto = ctx.foto;
     function E(path, html, opt){
       opt = opt || {};
       var tag = opt.tag || "span", cls = opt.cls ? ' class="' + opt.cls + '"' : "";
@@ -2211,34 +2382,44 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
       if (!o.kasten) return out;
       st.kaesten.forEach(function(k, i){
         if (k.pos !== pos) return;
+        var move = btn("kpos", i, pos === "oben" ? "Unter die Aufgaben" : "Über die Aufgaben");
+        if (k.typ === "tabelle"){
+          out += '<section class="s-sec s-tabk">' + E("kaesten." + i + ".t", k.t, { tag: "p", cls: "s-lbl", single: 1, ph: "Überschrift der Tabelle" })
+            + '<table class="s-tab s-free"><thead><tr>' + k.cols.map(function(c, j){ return "<th>" + E("kaesten." + i + ".cols." + j, c, { single: 1, ph: "Spalte" }) + "</th>"; }).join("") + "</tr></thead><tbody>"
+            + new Array(k.rows + 1).join("<tr>" + new Array(k.cols.length + 1).join('<td class="s-blank"></td>') + "</tr>") + "</tbody></table>"
+            + (edit ? '<div class="ws-ctl">' + btn("tcp", i, "+ Spalte", k.cols.length >= 6 ? " disabled" : "") + btn("tcm", i, "− Spalte", k.cols.length <= 1 ? " disabled" : "")
+              + btn("trp", i, "+ Zeile", k.rows >= 14 ? " disabled" : "") + btn("trm", i, "− Zeile", k.rows <= 1 ? " disabled" : "") + move + btn("kdel", i, "Entfernen") + "</div>" : "")
+            + "</section>";
+          return;
+        }
         if (!edit && blank(k.h) && blank(k.t)) return;
         out += '<section class="s-kasten' + (pos === "oben" ? " s-hinweis" : "") + '">' + E("kaesten." + i + ".t", k.t, { tag: "p", cls: "s-lbl", single: 1, ph: "Überschrift" })
           + E("kaesten." + i + ".h", k.h, { tag: "div", cls: "s-ktext", ph: "Text …" })
-          + (edit ? '<div class="ws-ctl">' + btn("kpos", i, pos === "oben" ? "Unter die Aufgaben" : "Über die Aufgaben") + btn("kdel", i, "Entfernen") + "</div>" : "") + "</section>";
+          + (edit ? '<div class="ws-ctl">' + move + btn("kdel", i, "Entfernen") + "</div>" : "") + "</section>";
       });
-      if (edit && pos === "unten") out += '<button type="button" class="ws-add" data-act="kadd">+ Textkasten hinzufügen</button>';
+      if (edit && pos === "unten") out += '<div class="ws-adds"><button type="button" class="ws-add" data-act="kadd">+ Textkasten</button><button type="button" class="ws-add" data-act="tadd">+ Tabelle zum Ausfüllen</button></div>';
       return out;
     }
 
     // Kopf
-    h += '<header class="s-head"><div>' + E("kopf", st.kopf, { tag: "p", cls: "s-kopf", single: 1, ph: "Fach · Klasse" }) + E("reihe", st.reihe, { tag: "p", cls: "s-reihe", single: 1, ph: "Reihe" }) + "</div>";
+    h += '<header class="s-head"><div>' + E("kopf", st.kopf, { tag: "p", cls: "s-kopf", single: 1, ph: "Fach · Klasse" }) + E("reihe", st.reihe, { tag: "p", cls: "s-reihe", single: 1, ph: "Reihe oder Thema" }) + "</div>";
     if (o.namen) h += '<div class="s-felder"><p class="s-feld s-name"><span>Name</span><span></span></p><p class="s-feld"><span>Klasse</span><span></span></p><p class="s-feld"><span>Datum</span><span></span></p></div>';
     h += "</header>";
-    // Titel und Leitfrage
-    h += '<div class="s-titel"><div>' + E("eyebrow", st.eyebrow, { tag: "p", cls: "s-eyebrow", single: 1, ph: "Stunde · Datum" }) + E("titel", st.titel, { tag: "h1", cls: "s-h1", single: 1, ph: "Titel" })
-      + '</div><div class="s-stamp" aria-hidden="true"><span>Stunde</span><b>' + n + "</b><span>" + dates[n - 1].slice(0, 4) + "</span></div></div>";
-    h += '<div class="s-frage"><span class="s-lbl">Leitfrage</span>' + E("frage", st.frage, { tag: "p", single: 1, ph: "Leitfrage" }) + "</div>";
+    // Titel, Stempel, Leitfrage
+    h += '<div class="s-titel"><div>' + E("eyebrow", st.eyebrow, { tag: "p", cls: "s-eyebrow", single: 1, ph: "Thema · Datum" }) + E("titel", st.titel, { tag: "h1", cls: "s-h1", single: 1, ph: "Titel des Arbeitsblatts" }) + "</div>";
+    if (o.stamp) h += '<div class="s-stamp"' + (edit ? "" : ' aria-hidden="true"') + ">" + E("stamp.a", st.stamp.a, { single: 1, ph: "…" }) + "<b>" + E("stamp.b", st.stamp.b, { single: 1, ph: "1" }) + "</b>" + E("stamp.c", st.stamp.c, { single: 1, ph: "…" }) + "</div>";
+    h += "</div>";
+    if (o.frage) h += '<div class="s-frage"><span class="s-lbl">Leitfrage</span>' + E("frage", st.frage, { tag: "p", single: 1, ph: "Leitfrage" }) + "</div>";
     h += kaesten("oben");
-    // Foto
+    // Foto oder Bild
     if (o.foto && (foto || edit)){
-      var al = document.querySelector('.album[data-slot="stunde-' + n + '"]');
-      var alt = al ? al.querySelector(".photo").getAttribute("alt") : "";
-      var sigEl = al ? al.querySelectorAll(".empty p")[2] : null;
       var corners = '<span class="s-k s-k1"></span><span class="s-k s-k2"></span><span class="s-k s-k3"></span><span class="s-k s-k4"></span>';
       h += '<figure class="s-foto">' + E("fototag", st.fototag, { tag: "span", cls: "s-mtag", single: 1, ph: "M 1" });
-      if (foto) h += '<span class="s-fw">' + corners + '<img class="s-img" src="' + esc(foto) + '" alt="' + esc(alt || "") + '"></span>';
-      else h += '<span class="s-fw s-wide"><span class="s-leer"><b>Foto</b><span>' + esc(sigEl ? sigEl.textContent : "") + "</span><span>" + "Noch kein Foto eingesetzt. Ohne Foto erscheint dieses Feld nicht auf dem Ausdruck; einsetzen lässt es sich auf der Stundenseite." + "</span></span></span>";
+      if (foto) h += '<span class="s-fw">' + corners + '<img class="s-img" src="' + esc(foto) + '" alt="' + esc(ctx.alt || "") + '"></span>';
+      else if (ctx.eigen) h += '<span class="s-fw s-wide"><span class="s-leer"><b>Bild</b><span>Noch kein Bild eingesetzt. Ohne Bild erscheint dieses Feld nicht auf dem Ausdruck.</span></span></span>';
+      else h += '<span class="s-fw s-wide"><span class="s-leer"><b>Foto</b><span>' + esc(ctx.sig) + "</span><span>Noch kein Foto eingesetzt. Ohne Foto erscheint dieses Feld nicht auf dem Ausdruck; einsetzen lässt es sich auf der Stundenseite.</span></span></span>";
       if (o.legende) h += E("legende", st.legende, { tag: "figcaption", cls: "s-leg", ph: "Bildlegende" });
+      if (edit && ctx.eigen) h += '<div class="ws-ctl">' + btn("bild", null, foto ? "Bild ersetzen" : "Bild einsetzen") + (foto ? btn("bildweg", null, "Bild entfernen") : "") + "</div>";
       h += "</figure>";
     }
     // Aufgaben
@@ -2303,10 +2484,12 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
       var items = "";
       st.satz.forEach(function(s, i){
         if (!edit && blank(s.h)) return;
-        var lbl = s.lv === "S" ? "Sachurteil" : (o.niv ? "Werturteil " + s.lv : "Werturteil");
-        items += '<li data-lv="' + s.lv + '"><span class="s-sl">' + lbl + "</span>" + E("satz." + i + ".h", s.h, { ph: "Satzbaustein …" }) + "</li>";
+        var lbl = s.lv === "S" ? "Sachurteil" : (s.lv === "A" ? "Satzanfang" : (o.niv ? "Werturteil " + s.lv : "Werturteil"));
+        items += '<li data-lv="' + s.lv + '"><span class="s-sl">' + lbl + "</span>" + E("satz." + i + ".h", s.h, { ph: "Satzbaustein …" })
+          + (edit ? '<div class="ws-ctl"><label>Art <select data-f="slv" data-i="' + i + '">' + listOptions(SATZ_LV, s.lv) + "</select></label>" + btn("sdel", i, "Entfernen") + "</div>" : "") + "</li>";
       });
-      if (items) h += '<section class="s-sec"><p class="s-lbl">Satzbausteine</p><ul class="s-satz">' + items + "</ul></section>";
+      if (items || edit) h += '<section class="s-sec"><p class="s-lbl">Satzbausteine</p><ul class="s-satz">' + items + "</ul>"
+        + (edit ? '<button type="button" class="ws-add" data-act="sadd">+ Satzbaustein</button>' : "") + "</section>";
     }
     // Wortspeicher
     if (o.wort && (edit || !blank(st.wort))) h += '<section class="s-sec"><p class="s-lbl">Wortspeicher</p>' + E("wort", st.wort, { tag: "p", cls: "s-wort", ph: "Begriff · Begriff · …" }) + "</section>";
@@ -2342,21 +2525,24 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   var wsReset = document.getElementById("ws-reset");
   var wsCloseBtn = document.getElementById("ws-close");
   var wsHint = document.getElementById("ws-hint");
-  var WS = { n: 0, st: null, ret: null, src: "vorlage" };
+  var WS = { kind: "stunde", key: 0, st: null, ret: null, src: "vorlage" };
   var saveT = null, saving = false, queued = null;
+  var wsFile = document.createElement("input");
+  wsFile.type = "file"; wsFile.accept = TYPES.join(","); wsFile.hidden = true; wsFile.setAttribute("aria-label", "Bild für das Arbeitsblatt wählen");
+  ws.appendChild(wsFile);
 
   function wsIsOpen(){ return !ws.hidden; }
   function isEditable(el){ return !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName || "")); }
   function setWsStatus(t){ wsStatus.textContent = t || ""; }
   function wsNote(t){ wsNoteEl.textContent = t || ""; }
+  function curCtx(){ return ctxFor(WS.kind, WS.key, WS.st); }
   var measure = document.createElement("div");
   measure.setAttribute("aria-hidden", "true");
   measure.style.cssText = "position:absolute;left:-10000px;top:0;width:184mm;visibility:hidden;pointer-events:none";
   document.body.appendChild(measure);
   function updatePages(){
     if (!WS.st){ wsPages.textContent = ""; return; }
-    var src = WS.st.opts.foto ? photoSrc(WS.n) : "";
-    measure.innerHTML = '<article class="sheet" style="padding:0;max-width:none">' + renderSheet(WS.st, WS.n, false, src) + "</article>";
+    measure.innerHTML = '<article class="sheet" style="padding:0;max-width:none">' + renderSheet(WS.st, curCtx(), false) + "</article>";
     var art = measure.firstChild, px = art.offsetWidth / 184;   // Pixel je Millimeter
     var go = function(){
       if (!px) return;
@@ -2377,37 +2563,44 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   function rerender(focusSel){
     if (!WS.st) return;
     var sc = wsScroll.scrollTop;
-    wsSheet.innerHTML = renderSheet(WS.st, WS.n, true, photoSrc(WS.n));
+    wsSheet.innerHTML = renderSheet(WS.st, curCtx(), true);
     wsScroll.scrollTop = sc;
     var img = wsSheet.querySelector(".s-img");
     if (img) img.addEventListener("load", updatePages);
     if (focusSel){ var f = wsSheet.querySelector(focusSel); if (f) f.focus(); }
     updatePages();
   }
-  function openWS(n){
-    WS.n = n; WS.st = null; WS.ret = document.activeElement;
-    wsName.textContent = "Arbeitsblatt · Stunde " + n;
+  function openEditor(kind, key, initial){
+    WS.kind = kind; WS.key = key; WS.st = null; WS.ret = document.activeElement;
+    wsName.textContent = kind === "stunde" ? "Arbeitsblatt · Stunde " + key : "Eigenes Arbeitsblatt";
+    wsReset.hidden = kind !== "stunde";
     wsSheet.innerHTML = '<p class="s-load">Arbeitsblatt wird geladen …</p>';
     setWsStatus(""); wsPages.textContent = ""; wsNote("");
     try { wsOptbox.open = window.matchMedia("(min-width: 900px)").matches; } catch (e) {}
     ws.hidden = false; appEl.inert = true;
     wsCloseBtn.focus();
     blattReadyP.then(function(){
-      if (!wsIsOpen() || WS.n !== n || WS.st) return;
-      WS.st = loadState(n);
+      if (!wsIsOpen() || WS.kind !== kind || WS.key !== key || WS.st) return;
+      if (kind === "stunde") WS.st = loadState(key);
+      else if (initial){ WS.st = initial; WS.src = "neu"; }
+      else WS.st = loadOwn(key);
       syncOpts(); rerender(); wsScroll.scrollTop = 0;
       setWsStatus(sourceText());
+      if (initial){ markDirty(); var t = wsSheet.querySelector('[data-k="titel"]'); if (t) t.focus(); }
     });
   }
+  function openWS(n){ openEditor("stunde", n); }
   function closeWS(){
     flushSave();
     ws.hidden = true; appEl.inert = false; WS.st = null; wsSheet.innerHTML = "";
-    if (WS.ret && WS.ret.focus) WS.ret.focus();
+    renderOwnList();
+    if (WS.ret && WS.ret.focus && document.contains(WS.ret)) WS.ret.focus();
   }
   // Außerhalb von claude.ai (eigene Webseite, lokale Datei) läuft die Seite nicht im Rahmen des Viewers: dort darf der Browser selbst drucken.
   var STANDALONE = (function(){ try { return window.top === window.self; } catch (e) { return false; } })();
   var wsPrint = document.getElementById("ws-print");
   function wsCapsChanged(){
+    renderOwnList();
     if (downloads){ wsDl.hidden = false; wsPrint.hidden = true; return; }
     if (STANDALONE){
       wsDl.hidden = false; wsDl.textContent = "Herunterladen"; wsPrint.hidden = false;
@@ -2420,47 +2613,67 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   wsPrint.addEventListener("click", function(){
     if (!WS.st) return;
     flushSave();
-    wsSheet.innerHTML = renderSheet(WS.st, WS.n, false, WS.st.opts.foto ? photoSrc(WS.n) : "");
+    wsSheet.innerHTML = renderSheet(WS.st, curCtx(), false);
     window.addEventListener("afterprint", function(){ rerender(); }, { once: true });
     try { window.print(); } catch (e) { rerender(); }
   });
   function wsPhotoChanged(){
-    if (!wsIsOpen() || !WS.st || !WS.st.opts.foto) return;
+    if (!wsIsOpen() || !WS.st || WS.kind !== "stunde" || !WS.st.opts.foto) return;
     if (wsSheet.contains(document.activeElement)) return;
     rerender();
   }
 
   /* Speichern: gemeinsam (nur mit Bearbeitungsrecht), sonst als Entwurf im Browser */
+  function target(){ return { kind: WS.kind, key: WS.key }; }
   function markDirty(){
     setWsStatus("Änderungen werden gespeichert …");
     clearTimeout(saveT);
-    var n = WS.n, st = WS.st;
-    saveT = setTimeout(function(){ saveT = null; doSave(n, st); }, 900);
+    var t = target(), st = WS.st;
+    saveT = setTimeout(function(){ saveT = null; doSave(t, st); }, 900);
   }
-  function flushSave(){ if (saveT){ clearTimeout(saveT); saveT = null; doSave(WS.n, WS.st); } }
-  function doSave(n, st){
+  function flushSave(){ if (saveT){ clearTimeout(saveT); saveT = null; doSave(target(), WS.st); } }
+  function saveLocalCopy(t, data){
+    if (t.kind === "stunde") return writeLocal(t.key, data);
+    localOwn[t.key] = data;
+    var ok = writeOwnLocal();
+    renderOwnList();
+    return ok;
+  }
+  function doSave(t, st){
     if (!st) return;
+    if (t.kind === "eigen"){
+      st.meta = st.meta || {};
+      st.meta.geaendert = new Date().toISOString();
+      if (!st.meta.erstellt) st.meta.erstellt = st.meta.geaendert;
+    }
     var data = JSON.parse(JSON.stringify(st));
-    var mine = function(t){ if (wsIsOpen() && WS.n === n) setWsStatus(t); };
-    if (db && canWriteBlatt !== false){
-      if (saving){ queued = { n: n, st: st }; return; }
+    var mine = function(msg){ if (wsIsOpen() && WS.kind === t.kind && WS.key === t.key) setWsStatus(msg); };
+    var tooBig = JSON.stringify(data).length > 240000;
+    if (db && canWriteBlatt !== false && !tooBig){
+      if (saving){ queued = { t: t, st: st }; return; }
       saving = true;
-      db.doc("blaetter/stunde-" + n).set(data).then(function(){
-        blattSaved[n] = data; removeLocal(n); canWriteBlatt = true; WS.src = "gemeinsam";
+      var path = t.kind === "stunde" ? "blaetter/stunde-" + t.key : "eigene/" + t.key;
+      db.doc(path).set(data).then(function(){
+        canWriteBlatt = true;
+        if (t.kind === "stunde"){ blattSaved[t.key] = data; removeLocal(t.key); }
+        else { sharedOwn[t.key] = data; if (localOwn[t.key]){ delete localOwn[t.key]; writeOwnLocal(); } renderOwnList(); }
+        if (WS.kind === t.kind && WS.key === t.key) WS.src = "gemeinsam";
         mine("Gespeichert. Alle mit Zugriff sehen diese Fassung.");
       }, function(e){
         var c = e && e.code;
         if (c === "invalid_argument" || c === "revoked" || c === "not_granted" || c === "capability_disabled" || c === "capability_removed") canWriteBlatt = false;
-        var ok = writeLocal(n, data);
-        if (c === "quota_exceeded") mine("Der gemeinsame Speicher ist voll. Der Entwurf liegt in diesem Browser.");
-        else if (canWriteBlatt === false) mine(ok ? "Entwurf in diesem Browser gespeichert. Nur du siehst ihn." : "Die Änderungen lassen sich hier nicht speichern.");
-        else mine(ok ? "Gerade nicht gemeinsam gespeichert. Der Entwurf liegt in diesem Browser; die nächste Änderung versucht es erneut." : "Die Änderungen konnten nicht gespeichert werden.");
+        var ok = saveLocalCopy(t, data);
+        if (c === "quota_exceeded") mine("Der gemeinsame Speicher ist voll. Das Blatt liegt in diesem Browser.");
+        else if (canWriteBlatt === false) mine(ok ? "In diesem Browser gespeichert. Nur du siehst es." : "Die Änderungen lassen sich hier nicht speichern.");
+        else mine(ok ? "Gerade nicht gemeinsam gespeichert. Das Blatt liegt in diesem Browser; die nächste Änderung versucht es erneut." : "Die Änderungen konnten nicht gespeichert werden.");
       }).then(function(){
         saving = false;
-        if (queued){ var q = queued; queued = null; doSave(q.n, q.st); }
+        if (queued){ var q = queued; queued = null; doSave(q.t, q.st); }
       });
     } else {
-      mine(writeLocal(n, data) ? "Entwurf in diesem Browser gespeichert. Nur du siehst ihn." : "In dieser Ansicht lassen sich Änderungen nicht speichern.");
+      var ok = saveLocalCopy(t, data);
+      if (tooBig && db && canWriteBlatt !== false) mine(ok ? "Das Blatt ist für den gemeinsamen Speicher zu groß, meist wegen des Bildes. Es liegt in diesem Browser." : "Das Blatt ist zu groß zum Speichern. Bitte ein kleineres Bild einsetzen.");
+      else mine(ok ? "In diesem Browser gespeichert. Nur du siehst es." : "Der Speicher dieses Browsers ist voll oder gesperrt; die Änderungen werden nicht gespeichert.");
     }
   }
 
@@ -2477,6 +2690,46 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
     b._t = setTimeout(function(){ b.dataset.confirm = ""; b.textContent = label; }, 4000);
     return false;
   }
+
+  /* Bilder für eigene Blätter: mit Bearbeitungsrecht in den Asset-Speicher, sonst verkleinert im Blatt */
+  function shrink(file){
+    return new Promise(function(res, rej){
+      var url = URL.createObjectURL(file), img = new Image();
+      img.onload = function(){
+        var s = Math.min(1, 1400 / Math.max(img.naturalWidth, img.naturalHeight));
+        var c = document.createElement("canvas");
+        c.width = Math.max(1, Math.round(img.naturalWidth * s)); c.height = Math.max(1, Math.round(img.naturalHeight * s));
+        var g = c.getContext("2d"); g.fillStyle = "#fff"; g.fillRect(0, 0, c.width, c.height); g.drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        try { res(c.toDataURL("image/jpeg", 0.82)); } catch (e) { rej(e); }
+      };
+      img.onerror = function(){ URL.revokeObjectURL(url); rej(new Error("bild")); };
+      img.src = url;
+    });
+  }
+  wsFile.addEventListener("change", function(){
+    var file = wsFile.files && wsFile.files[0];
+    if (!file || !WS.st || WS.kind !== "eigen") return;
+    if (TYPES.indexOf(file.type) < 0){ wsNote("Bitte ein JPG-, PNG-, WebP- oder GIF-Bild wählen."); return; }
+    var st = WS.st, t = target();
+    var apply = function(bild){
+      st.bild = bild; st.opts.foto = true;
+      if (WS.st === st){ syncOpts(); rerender(); markDirty(); } else doSave(t, st);
+      wsNote("Bild eingesetzt.");
+    };
+    var viaShrink = function(){
+      wsNote("Bild wird vorbereitet …");
+      shrink(file).then(function(uri){ apply({ asset: "", data: uri }); }, function(){ wsNote("Das Bild ließ sich nicht laden."); });
+    };
+    if (assets && db && canWriteBlatt !== false){
+      wsNote("Bild wird hochgeladen …");
+      uploadOnce(file).then(function(res){ apply({ asset: res.id, data: "" }); }, function(e){
+        var c = e && e.code;
+        if (c === "not_granted" || c === "capability_disabled" || c === "capability_removed") viaShrink();
+        else wsNote(uploadMessage(c));
+      });
+    } else viaShrink();
+  });
 
   wsSheet.addEventListener("input", function(e){
     var el = e.target.closest ? e.target.closest("[data-k]") : null;
@@ -2506,17 +2759,21 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   wsSheet.addEventListener("change", function(e){
     var el = e.target, f = el.dataset && el.dataset.f;
     if (!f || !WS.st) return;
-    var a = WS.st.aufgaben[+el.dataset.i];
-    if (!a) return;
-    if (f === "m") a.m = el.value.replace(/[<>]/g, "").trim().slice(0, 80);
-    else a[f] = el.value;
-    rerender('[data-f="' + f + '"][data-i="' + el.dataset.i + '"]');
+    var i = +el.dataset.i;
+    if (f === "slv"){ var s = WS.st.satz[i]; if (!s) return; s.lv = okList(SATZ_LV, el.value) ? el.value : "A"; }
+    else {
+      var a = WS.st.aufgaben[i];
+      if (!a) return;
+      if (f === "m") a.m = el.value.replace(/[<>]/g, "").trim().slice(0, 80);
+      else a[f] = el.value;
+    }
+    rerender('[data-f="' + f + '"][data-i="' + i + '"]');
     markDirty();
   });
   wsSheet.addEventListener("click", function(e){
     var b = e.target.closest ? e.target.closest("button[data-act]") : null;
     if (!b || !WS.st) return;
-    var st = WS.st, act = b.dataset.act, i = +b.dataset.i, A = st.aufgaben, r = st.raster, focus = null;
+    var st = WS.st, act = b.dataset.act, i = +b.dataset.i, A = st.aufgaben, r = st.raster, K = st.kaesten, focus = null;
     switch (act){
       case "add":
         A.push(T("beschreiben", "EA", "", "", 3));
@@ -2532,9 +2789,14 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
         if (A[i].tip == null){ A[i].tip = ""; focus = '[data-k="aufgaben.' + i + '.tip"]'; }
         else { A[i].tip = null; focus = '[data-act="tip"][data-i="' + i + '"]'; }
         break;
-      case "kadd": st.kaesten.push({ pos: "unten", t: "", h: "" }); focus = '[data-k="kaesten.' + (st.kaesten.length - 1) + '.t"]'; break;
-      case "kdel": if (!confirmStep(b, "Entfernen")) return; st.kaesten.splice(i, 1); break;
-      case "kpos": st.kaesten[i].pos = st.kaesten[i].pos === "oben" ? "unten" : "oben"; break;
+      case "kadd": K.push({ typ: "text", pos: "unten", t: "", h: "", cols: [], rows: 0 }); st.opts.kasten = true; focus = '[data-k="kaesten.' + (K.length - 1) + '.t"]'; break;
+      case "tadd": K.push({ typ: "tabelle", pos: "unten", t: "", h: "", cols: ["", ""], rows: 4 }); st.opts.kasten = true; focus = '[data-k="kaesten.' + (K.length - 1) + '.t"]'; break;
+      case "kdel": if (!confirmStep(b, "Entfernen")) return; K.splice(i, 1); break;
+      case "kpos": K[i].pos = K[i].pos === "oben" ? "unten" : "oben"; break;
+      case "tcp": if (K[i].cols.length < 6) K[i].cols.push(""); focus = '[data-act="tcp"][data-i="' + i + '"]'; break;
+      case "tcm": if (K[i].cols.length > 1) K[i].cols.pop(); focus = '[data-act="tcm"][data-i="' + i + '"]'; break;
+      case "trp": K[i].rows = Math.min(14, K[i].rows + 1); focus = '[data-act="trp"][data-i="' + i + '"]'; break;
+      case "trm": K[i].rows = Math.max(1, K[i].rows - 1); focus = '[data-act="trm"][data-i="' + i + '"]'; break;
       case "merkleer":
         st.merk.leer = !st.merk.leer;
         st.merk.rows.forEach(function(row, j){ if (!st.merk.leer && blank(row.c)) row.c = MERK[j][2]; });
@@ -2543,8 +2805,13 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
       case "km": if (r.krit.length > 1) r.krit.pop(); focus = '[data-act="km"]'; break;
       case "cp": if (r.cols.length < 4) r.cols.push("Perspektive"); focus = '[data-act="cp"]'; break;
       case "cm": if (r.cols.length > 1) r.cols.pop(); focus = '[data-act="cm"]'; break;
+      case "sadd": st.satz.push({ lv: "A", h: "" }); focus = '[data-k="satz.' + (st.satz.length - 1) + '.h"]'; break;
+      case "sdel": if (!confirmStep(b, "Entfernen")) return; st.satz.splice(i, 1); break;
+      case "bild": wsFile.value = ""; wsFile.click(); return;
+      case "bildweg": if (!confirmStep(b, "Bild entfernen")) return; st.bild = { asset: "", data: "" }; break;
       default: return;
     }
+    if (act === "kadd" || act === "tadd") syncOpts();
     rerender(focus);
     markDirty();
   });
@@ -2556,14 +2823,14 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   });
   wsCloseBtn.addEventListener("click", closeWS);
   wsReset.addEventListener("click", function(){
-    if (!WS.st) return;
+    if (!WS.st || WS.kind !== "stunde") return;
     if (!confirmStep(wsReset, "Zurücksetzen")) return;
     wsReset.dataset.confirm = ""; wsReset.textContent = "Zurücksetzen";
-    var n = WS.n;
+    var n = WS.key;
     clearTimeout(saveT); saveT = null;
     if (db && canWriteBlatt !== false){
       removeLocal(n); WS.st = defState(n); WS.src = "vorlage";
-      rerender(); doSave(n, WS.st);
+      rerender(); doSave({ kind: "stunde", key: n }, WS.st);
       wsNote("Auf die Vorlage zurückgesetzt.");
     } else {
       removeLocal(n); WS.st = normalize(blattSaved[n], defState(n)); WS.src = blattSaved[n] ? "lehrkraft" : "vorlage";
@@ -2573,7 +2840,7 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
     syncOpts();
   });
 
-  /* Druckdatei: eigenständige HTML-Datei mit A4-Layout und eingebettetem Foto */
+  /* Druckdatei: eigenständige HTML-Datei mit A4-Layout und eingebettetem Bild */
   var FILE_CSS = "html{background:#E7E2D8}body{margin:0;padding:24px 16px 48px;background:#E7E2D8}"
     + ".dl-bar{max-width:210mm;margin:0 auto 16px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;font:400 14px/1.45 'Source Serif 4',Georgia,serif;color:#1B1A17}"
     + ".dl-bar button{font:600 12px/1 'Jost',system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;border:1px solid #5A3E8D;color:#5A3E8D;background:#fff;border-radius:2px;cursor:pointer}"
@@ -2581,29 +2848,38 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
     + "@media print{html,body{background:#fff}body{padding:0}.dl-bar{display:none}.sheet{box-shadow:none}}";
   function toDataURI(src){
     if (!src) return Promise.resolve("");
+    if (/^data:/.test(src)) return Promise.resolve(src);
     return fetch(src).then(function(r){ if (!r.ok) throw new Error("http"); return r.blob(); }).then(function(b){
       return new Promise(function(res, rej){ var fr = new FileReader(); fr.onload = function(){ res(String(fr.result)); }; fr.onerror = rej; fr.readAsDataURL(b); });
     }).catch(function(){ return ""; });
   }
-  function buildFile(st, n, uri){
+  function slug(s){
+    s = String(s || "").toLowerCase().replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
+      .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40).replace(/-+$/, "");
+    return s || "ohne-titel";
+  }
+  function fileTitle(kind, key, st){ return kind === "stunde" ? "Arbeitsblatt Stunde " + key + " – " + plain(st.titel) : (plain(st.titel) || "Arbeitsblatt"); }
+  function fileName(kind, key, st){ return kind === "stunde" ? "Arbeitsblatt-Stunde-" + key + ".html" : "Arbeitsblatt-" + slug(plain(st.titel)) + ".html"; }
+  function buildFile(st, ctx, title){
     var css = document.getElementById("sheet-css").textContent;
     var fl = document.querySelector('link[href*="fonts.googleapis.com/css2"]');
-    var title = "Arbeitsblatt Stunde " + n + " – " + plain(st.titel);
     return "<!doctype html>\n<html lang=\"de\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>" + esc(title) + "</title>"
       + (fl ? '<link rel="stylesheet" href="' + esc(fl.href) + '">' : "")
       + "<style>" + css + FILE_CSS + "</style></head><body>"
       + '<div class="dl-bar"><p><b>' + esc(title) + "</b><br>Drucken mit Strg + P, am Mac mit ⌘ + P. Im Druckdialog „Hintergrundgrafiken“ einschalten.</p>"
       + '<button type="button" onclick="window.print()">Drucken</button></div>'
-      + '<article class="sheet">' + renderSheet(st, n, false, uri) + "</article></body></html>";
+      + '<article class="sheet">' + renderSheet(st, ctx, false) + "</article></body></html>";
   }
   wsDl.addEventListener("click", function(){
     if (!WS.st) return;
+    flushSave();
+    var st = clone(WS.st), kind = WS.kind, key = WS.key, ctx = ctxFor(kind, key, st);
+    var title = fileTitle(kind, key, st), name = fileName(kind, key, st);
     if (!downloads && STANDALONE){
-      flushSave();
-      var st0 = clone(WS.st), n0 = WS.n;
-      toDataURI(st0.opts.foto ? photoSrc(n0) : "").then(function(uri){
-        var url = URL.createObjectURL(new Blob([buildFile(st0, n0, uri)], { type: "text/html" }));
-        var a = document.createElement("a"); a.href = url; a.download = "Arbeitsblatt-Stunde-" + n0 + ".html";
+      toDataURI(ctx.foto).then(function(uri){
+        ctx.foto = uri;
+        var url = URL.createObjectURL(new Blob([buildFile(st, ctx, title)], { type: "text/html" }));
+        var a = document.createElement("a"); a.href = url; a.download = name;
         document.body.appendChild(a); a.click(); a.remove();
         setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
         wsNote("Heruntergeladen.");
@@ -2611,18 +2887,17 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
       return;
     }
     if (!downloads){ wsNote("Herunterladen ist in dieser Ansicht nicht möglich."); return; }
-    flushSave();
-    var st = clone(WS.st), n = WS.n;
     wsDl.disabled = true; wsNote("Datei wird vorbereitet …");
-    toDataURI(st.opts.foto ? photoSrc(n) : "").then(function(uri){
-      return downloads.save({ filename: "Arbeitsblatt-Stunde-" + n + ".html", data: buildFile(st, n, uri) });
+    toDataURI(ctx.foto).then(function(uri){
+      ctx.foto = uri;
+      return downloads.save({ filename: name, data: buildFile(st, ctx, title) });
     }).then(function(res){
       wsNote(res && res.status === "delivered" ? "Die Datei wurde übergeben." : "Heruntergeladen. Die Datei im Browser öffnen und dort drucken oder als PDF sichern.");
     }, function(e){
       var c = e && e.code;
       if (c === "declined") wsNote("Herunterladen abgebrochen.");
       else if (c === "rate_limited") wsNote("Ein Speichern-Dialog ist schon offen. Bitte kurz warten und noch einmal versuchen.");
-      else if (c === "too_large") wsNote("Die Datei ist zu groß. Bitte ein kleineres Foto einsetzen oder das Foto ausblenden.");
+      else if (c === "too_large") wsNote("Die Datei ist zu groß. Bitte ein kleineres Bild einsetzen oder das Bild ausblenden.");
       else if (c === "bad_request" || c === "transform_error") wsNote("Die Datei ließ sich nicht erzeugen. Bitte noch einmal versuchen.");
       else { wsNote("Herunterladen ist in dieser Ansicht nicht möglich."); wsDl.hidden = true; }
     }).then(function(){ wsDl.disabled = false; });
@@ -2641,6 +2916,108 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
     box.appendChild(b); box.appendChild(s);
     meta.parentNode.insertBefore(box, meta.nextSibling);
   });
+
+  /* ================= Seite „Arbeitsblätter“: Creator für eigene Blätter ================= */
+  var abTpls = document.getElementById("ab-tpls");
+  var abList = document.getElementById("ab-list");
+  var abStatus = document.getElementById("ab-status");
+  var abSrc = document.getElementById("ab-src");
+  var abFrom = document.getElementById("ab-from");
+  VORLAGEN.forEach(function(v){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "ab-tpl"; b.dataset.tpl = v.id; b.setAttribute("aria-haspopup", "dialog");
+    b.innerHTML = "<b>" + esc(v.name) + "</b><span>" + esc(v.d) + "</span><i>Anlegen</i>";
+    abTpls.appendChild(b);
+  });
+  for (var sn = 1; sn <= 7; sn++){
+    var opt = document.createElement("option"), pg = document.getElementById("p-stunde-" + sn);
+    opt.value = String(sn);
+    opt.textContent = "Stunde " + sn + " · " + (pg ? pg.querySelector(".col-text h2").textContent : "");
+    abSrc.appendChild(opt);
+  }
+  abTpls.addEventListener("click", function(e){
+    var b = e.target.closest ? e.target.closest("[data-tpl]") : null;
+    if (!b) return;
+    var v = VORLAGEN.filter(function(x){ return x.id === b.dataset.tpl; })[0];
+    if (!v) return;
+    var st = normalize(v.make(), blankState());
+    st.quelle = "Vorlage " + v.name;
+    openEditor("eigen", newId(), st);
+  });
+  abFrom.addEventListener("click", function(){
+    var n = +abSrc.value;
+    blattReadyP.then(function(){
+      var keepSrc = WS.src;
+      var st = clone(loadState(n));
+      WS.src = keepSrc;
+      var slot = "stunde-" + n;
+      st.bild = stored[slot] ? { asset: stored[slot], data: "" } : { asset: "", data: "" };
+      st.meta = {}; st.quelle = "aus Stunde " + n;
+      openEditor("eigen", newId(), normalize(st, blankState()));
+    });
+  });
+  function fmtDate(iso){
+    if (!iso) return "";
+    try { return new Date(iso).toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" }); } catch (e) { return ""; }
+  }
+  function renderOwnList(){
+    if (!abList) return;
+    var ids = Object.keys(sharedOwn);
+    Object.keys(localOwn).forEach(function(id){ if (ids.indexOf(id) < 0) ids.push(id); });
+    var rows = ids.filter(function(id){ return /^b-[a-z0-9-]{4,40}$/.test(id) && isObj(ownData(id)); }).map(function(id){
+      var d = ownData(id);
+      return { id: id, d: d, t: (isObj(d.meta) && d.meta.geaendert) || "", shared: !!sharedOwn[id], local: !!localOwn[id] };
+    });
+    rows.sort(function(a, b){ return a.t < b.t ? 1 : (a.t > b.t ? -1 : 0); });
+    var writer = db && canWriteBlatt !== false;
+    if (!rows.length){
+      abList.innerHTML = '<li class="ab-empty">Noch keine eigenen Arbeitsblätter. Wähle oben eine Vorlage.</li>';
+    } else {
+      abList.innerHTML = rows.map(function(r){
+        var title = plain(r.d.titel).trim() || "Ohne Titel", sub = plain(r.d.eyebrow).trim() || plain(r.d.reihe).trim();
+        var meta = [fmtDate(r.t) ? "geändert am " + fmtDate(r.t) : "", String(r.d.quelle || "").replace(/[<>]/g, "")];
+        if (r.local && !r.shared && writer) meta.push("noch nicht gemeinsam gespeichert");
+        else if (r.local && !writer) meta.push("nur in diesem Browser");
+        else if (r.shared && !writer) meta.push("von der Lehrkraft");
+        var canDel = writer || r.local;
+        var delLabel = (!writer && r.shared) ? "Entwurf verwerfen" : "Löschen";
+        return '<li class="ab-item"><div class="ab-main"><b>' + esc(title) + "</b>" + (sub ? "<span>" + esc(sub) + "</span>" : "")
+          + '<span class="ab-meta">' + esc(meta.filter(Boolean).join(" · ")) + "</span></div>"
+          + '<div class="ab-act"><button type="button" class="btn pri" data-ab="open" data-id="' + r.id + '" aria-haspopup="dialog">Bearbeiten</button>'
+          + '<button type="button" class="btn" data-ab="dup" data-id="' + r.id + '">Duplizieren</button>'
+          + (canDel ? '<button type="button" class="btn" data-ab="del" data-id="' + r.id + '" data-label="' + delLabel + '">' + delLabel + "</button>" : "") + "</div></li>";
+      }).join("");
+    }
+    if (abStatus){
+      abStatus.textContent = !capsReady ? "" : (writer
+        ? "Deine Blätter werden gemeinsam gespeichert. Alle, mit denen du die Anwendung teilst, sehen sie."
+        : (db ? "Blätter, die du hier anlegst, bleiben in diesem Browser. Blätter der Lehrkraft kannst du öffnen und als eigenen Entwurf ändern."
+              : "Blätter, die du hier anlegst, bleiben in diesem Browser gespeichert, soweit er das zulässt."));
+    }
+  }
+  abList.addEventListener("click", function(e){
+    var b = e.target.closest ? e.target.closest("[data-ab]") : null;
+    if (!b) return;
+    var id = b.dataset.id, d = ownData(id);
+    if (!d) return;
+    if (b.dataset.ab === "open") openEditor("eigen", id);
+    else if (b.dataset.ab === "dup"){
+      var st = normalize(d, blankState());
+      st.titel = blank(st.titel) ? "Kopie" : st.titel + " (Kopie)";
+      st.meta = {};
+      doSave({ kind: "eigen", key: newId() }, st);
+      abStatus.textContent = "Kopie angelegt.";
+    } else if (b.dataset.ab === "del"){
+      if (!confirmStep(b, b.dataset.label || "Löschen")) return;
+      var writer = db && canWriteBlatt !== false;
+      var dropLocal = function(){ if (localOwn[id]){ delete localOwn[id]; writeOwnLocal(); } };
+      if (writer && sharedOwn[id]){
+        db.doc("eigene/" + id).delete().then(function(){ delete sharedOwn[id]; dropLocal(); renderOwnList(); abStatus.textContent = "Gelöscht."; },
+          function(){ abStatus.textContent = "Das Löschen hat nicht geklappt. Bitte noch einmal versuchen."; });
+      } else { dropLocal(); renderOwnList(); abStatus.textContent = writer ? "Gelöscht." : "Entwurf verworfen."; }
+    }
+  });
+  renderOwnList();
 
   initCaps();
 })();

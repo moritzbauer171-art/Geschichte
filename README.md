@@ -15,12 +15,14 @@ Jede Stunde arbeitet mit einem außergewöhnlichen Foto, vom 30. Januar 1933 bis
 
 Zu jeder Stunde gibt es ein Arbeitsblatt mit operationalisierten Aufgaben (Operator, Anforderungsbereich, Sozialform, Niveau F/G/H), Urteilsraster, Satzbausteinen, Wortspeicher und Operatorenliste. „Arbeitsblatt bearbeiten“ öffnet es auf der Stundenseite. Texte lassen sich direkt ändern, Bausteine ein- und ausblenden; „Drucken“ druckt nur das Blatt im A4-Format.
 
+Auf der Seite „Arbeitsblätter“ entstehen eigene Blätter von Grund auf: aus den Vorlagen Leeres Blatt, Bildanalyse, Textarbeit und Urteilsbildung oder mit einem Stundenblatt als Ausgangspunkt. Eigene Blätter können ein Bild, Textkästen, Tabellen zum Ausfüllen und frei wählbare Satzbausteine enthalten; die Sammlung lässt sich bearbeiten, duplizieren und löschen.
+
 ## Fotos
 
 Die Fotos sind nicht enthalten. Jede Stundenseite nennt Signatur und Fundstelle; über „Foto für diese Sitzung laden“ lässt sich ein Bild für die laufende Sitzung einsetzen.
 
 ## Hinweise zur Nutzung
 
-- Änderungen an Arbeitsblättern werden im eigenen Browser gespeichert, nicht auf dem Server.
+- Arbeitsblätter und eigene Blätter werden im eigenen Browser gespeichert, nicht auf dem Server.
 - Stunde 7 arbeitet mit einem Täterfoto einer öffentlichen Demütigung. Die Seite deckt es ab; im Unterricht wird es angekündigt und nicht projiziert.
 - Sachtexte stammen aus Fachliteratur und seriösen Quellen (u. a. bpb, LeMO/Deutsches Historisches Museum, Bundesarchiv); die Fundstellen stehen bei jeder Stunde.
