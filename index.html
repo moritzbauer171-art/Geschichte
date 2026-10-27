@@ -57,6 +57,11 @@ a:hover{text-decoration-thickness:2px}
 .brand small{font:400 .72rem/1 var(--f-type);color:var(--ink-2);margin-left:8px;letter-spacing:0}
 .where{display:flex;gap:14px;align-items:baseline;font:400 .82rem/1.2 var(--f-type);color:var(--ink-2);min-width:0}
 .where b{color:var(--ink);font-weight:700}
+.bar-r{display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap;justify-content:flex-end;min-width:0}
+.bar-ab{min-height:34px;padding:8px 11px;white-space:nowrap}
+.bar-ab .sm{display:none}
+.bar-ab[aria-current="page"]{background:var(--stamp);border-color:var(--stamp);color:var(--stamp-ink)}
+@media (max-width:600px){.bar-ab .lg{display:none}.bar-ab .sm{display:inline}}
 .track{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;min-height:0}
 .track::-webkit-scrollbar{display:none}
 .page{flex:0 0 100%;width:100%;min-width:0;height:100%;overflow-y:auto;overflow-x:hidden;scroll-snap-align:start;scroll-snap-stop:always}
@@ -432,7 +437,10 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
 <div class="app">
   <header class="bar">
     <button class="brand" id="home" type="button" aria-label="Zur Startseite">Sieben Fotos, fünf Jahre<small>1933–1938</small></button>
-    <div class="where" aria-live="polite"><b id="station">Start</b><span class="cnt" id="count">1 / 15</span></div>
+    <div class="bar-r">
+      <div class="where" aria-live="polite"><b id="station">Start</b><span class="cnt" id="count">1 / 16</span></div>
+      <button class="btn pri bar-ab" id="to-creator" type="button" title="Zum Arbeitsblatt-Creator"><span class="lg">Arbeitsblatt-Creator</span><span class="sm">Creator</span></button>
+    </div>
   </header>
 
   <main class="track" id="track">
@@ -1641,6 +1649,7 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   var reduce = false;
   try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
   var cur = -1, settle = null;
+  var toCreator = document.getElementById("to-creator");
 
   /* ---------- Fotofries ---------- */
   var timeEl = document.getElementById("f-time");
@@ -1687,6 +1696,7 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
       b.classList.toggle("is-on", on);
       if (on) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
     });
+    if (ids[i] === "blaetter") toCreator.setAttribute("aria-current", "page"); else toCreator.removeAttribute("aria-current");
     try { history.replaceState(null, "", "#" + ids[i]); } catch (e) {}
     drawFries();
   }
@@ -1709,6 +1719,7 @@ details.more > div{display:flex;flex-direction:column;gap:10px;font-size:.98rem}
   prev.addEventListener("click", function(){ go(cur - 1, true); });
   next.addEventListener("click", function(){ go(cur + 1, true); });
   document.getElementById("home").addEventListener("click", function(){ go(0, true); });
+  toCreator.addEventListener("click", function(){ var i = ids.indexOf("blaetter"); if (i >= 0) go(i, true); });
   Array.prototype.forEach.call(document.querySelectorAll(".nav [data-go]"), function(b){
     b.addEventListener("click", function(){ var i = ids.indexOf(b.dataset.go); if (i >= 0) go(i, true); });
   });
