@@ -1,6 +1,6 @@
 # Sieben Fotos, fünf Jahre
 
-**Der Weg in die Diktatur 1933–1938** – Unterrichtsreihe Geschichte für eine Klasse 10 (ISS), sieben Stunden à 45 Minuten.
+**Der Weg in die Diktatur 1933–1938** – Unterrichtsreihe Geschichte für eine Klasse 10 (ISS) mit sieben Schülerinnen und Schülern, sieben Stunden à 45 Minuten.
 
 Jede Stunde arbeitet mit einem außergewöhnlichen Foto, vom 30. Januar 1933 bis zum „Anschluss“ Österreichs im März 1938. Die Reihe orientiert sich an der Fotodidaktik von Christoph Hamann und am Urteilsbildungsmodell nach Kayser/Hagemann. Sie steht unter dem Kompetenzziel 2.4 G des Rahmenlehrplans Berlin-Brandenburg (Teil C Geschichte): Gemeinsamkeiten und Unterschiede von historischen und gegenwärtigen Werten erörtern.
 
@@ -10,7 +10,7 @@ Jede Stunde arbeitet mit einem außergewöhnlichen Foto, vom 30. Januar 1933 bis
 
 - Kompetenzziel, Planungsprinzipien, Urteilsbildung und Fotoarbeit nach Hamann
 - Verknüpfung mit der Deutschreihe zu Franck Pavloffs „Brauner Morgen“
-- sieben Stundenseiten mit Verlauf, Urteilsbildung, Basaltext, Material und Quellen
+- sieben Stundenseiten mit Verlauf in den Phasen nach Tilman von Brand (Einstieg, Erarbeitung, Plateaubildung, Vertiefung, Schluss/Urteil; Stunde 7 dreigliedrig), einem Urteilsschwerpunkt je Stunde, Basaltext, Material und Quellen
 - Abschlussaufgabe mit Bewertungsraster, Bildnachweise und Literatur
 
 Zu jeder Stunde gibt es ein Arbeitsblatt mit operationalisierten Aufgaben (Operator, Anforderungsbereich, Sozialform, Niveau F/G/H), Urteilsraster, Satzbausteinen, Wortspeicher und Operatorenliste. „Arbeitsblatt bearbeiten“ öffnet es auf der Stundenseite. Texte lassen sich direkt ändern, Bausteine ein- und ausblenden; „Drucken“ druckt nur das Blatt im A4-Format.
